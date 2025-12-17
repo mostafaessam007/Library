@@ -11,12 +11,55 @@ header, footer{
     padding: 0.6em;
 }
 header{
+    display: flex;
     font-size: 2em;
     font-weight: 900;
+    justify-content: space-between;
 }
-main{
+main, fieldset{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 0.5em;
+}
+main, .addBookBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+}
+.newBookBtn{
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid rgb(204, 204, 173) 0.1px ;
+    color: rgb(76, 76, 76);
+    background-color:rgb(219, 219, 188);
+ box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+}
+form{
     
 }
+fieldset{
+    width: 500px;
+    border-radius: 5px;
+}
+.addBookBtn{
+    font-size: 30px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid rgb(204, 204, 173) 0.1px ;
+    color: rgb(76, 76, 76);
+    background-color:rgb(219, 219, 188);
+ box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+}
+
 
 footer{
     position: fixed;

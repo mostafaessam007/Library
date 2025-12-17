@@ -10,9 +10,44 @@
 <body>
     <header>
         <div class="logo">Library</div>
+    
+         <div class="addBtncontainer"
+        ><button class="newBookBtn" type="button">New Book</button>
+    </div>
     </header>
     <main>
-        <div>Books</div>
+       
+
+        <div class="modal">
+            <div class="modalHeader"></div>
+            <form>
+                <fieldset>
+                    <legend>Enter the new book's details!</legend>
+                     <label for="bookTitle">Title</label>
+                    <input type="text" name="bookTitle" id="bookTitle" required>
+
+                     <label for="bookAuthor">Author</label>
+                    <input type="text" name="bookAuthor" id="bookAuthor" required>
+
+                     <label for="noOfPages">Number of Pages</label>
+                    <input type="number" name="noOfPages" id="noOfPages" required>
+
+                    <p>Have you read the book?</p>
+                     <label for="readYes"> yes
+                    <input type="radio" name="read" id="readYes" value="yes" required>
+                     </label>
+                      <label for="readNo">no
+                    <input type="radio" name="read" id="readNo" value="no" >
+                     </label>
+                     <div class="addBookBtnContainer">
+                         <button type="submit" class="addBookBtn">Add book</button>
+                     </div>
+
+
+                     
+                </fieldset>
+            </form>
+        </div>
     </main>
     <footer>
         Copyright © 2025 mostafaessam007

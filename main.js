@@ -38,4 +38,8 @@ function showLibrary() {
         main.appendChild(div)
     })
 }
-showLibrary()
+const newBookBtn = document.querySelector(".newBookBtn");
+
+newBookBtn.addEventListener("click", ()=>{
+    
+})
