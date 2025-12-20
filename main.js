@@ -38,8 +38,23 @@ function showLibrary() {
         main.appendChild(div)
     })
 }
+
+//opens pop up
 const newBookBtn = document.querySelector(".newBookBtn");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
 newBookBtn.addEventListener("click", ()=>{
-    
+    modal.classList.add("open-modal");
+    overlay.classList.add("open-overlay")
+
+})
+
+//closes pop up and submits book details
+const addBookBtn = document.querySelector(".addBookBtn");
+
+addBookBtn.addEventListener("click", ()=>{
+     modal.classList.remove("open-modal")
+     overlay.classList.remove("open-overlay")
+
 })

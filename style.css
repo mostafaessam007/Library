@@ -3,7 +3,7 @@
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-body{
+body, fieldset, .modal{
     background-color: rgb(227, 227, 211);
 }
 header, footer{
@@ -15,6 +15,18 @@ header{
     font-size: 2em;
     font-weight: 900;
     justify-content: space-between;
+}
+.newBookBtn{
+    cursor: pointer;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid rgb(204, 204, 173) 0.1px ;
+    color: rgb(76, 76, 76);
+    background-color:rgb(219, 219, 188);
+ box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
 }
 main, fieldset{
     display: flex;
@@ -29,16 +41,14 @@ main, .addBookBtnContainer{
     gap: 2em;
 
 }
-.newBookBtn{
-    font-size: 30px;
+.modal{
     padding: 5px;
     border-radius: 5px;
-    border: solid rgb(204, 204, 173) 0.1px ;
-    color: rgb(76, 76, 76);
-    background-color:rgb(219, 219, 188);
- box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+    z-index: 290;
+    visibility: hidden;
+}
+.open-modal{
+    visibility: visible;
 }
 form{
     
@@ -46,8 +56,27 @@ form{
 fieldset{
     width: 500px;
     border-radius: 5px;
+    border: none;
+    box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    visibility: hidden;
+}
+.open-overlay{
+    visibility: visible;
+
 }
 .addBookBtn{
+    cursor: pointer;
     font-size: 30px;
     width: 200px;
     padding: 5px;
