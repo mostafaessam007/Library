@@ -5,22 +5,22 @@ const main = document.querySelector('main');
 // const isRead = document.querySelector(".isRead");
 
 const library = [
-{
+// {
     
-    title: 'good book',
-    author: 'good author',
-    pages: 298,
-    isRead: true,
-    id: crypto.randomUUID()
-},
-{
+//     title: 'good book',
+//     author: 'good author',
+//     pages: 298,
+//     isRead: true,
+//     id: crypto.randomUUID()
+// },
+// {
     
-    title: 'awseome book',
-    author: 'decent author',
-    pages: 220,
-    isRead: false,
-    id: crypto.randomUUID()
-}
+//     title: 'awseome book',
+//     author: 'decent author',
+//     pages: 220,
+//     isRead: false,
+//     id: crypto.randomUUID()
+// }
 ];
 
 function Book(title, author, pages, isRead) {
@@ -39,12 +39,7 @@ function addBookToLibrary(title, author, pages, isRead) {
     library.push(book1 = {title, author, pages, isRead, id})
 }
 
-// addBookToLibrary('harry potter', 'j.k', 300, false)
-
-
-
-// const values = Object.values(library)
-
+//adds book details to the DOM
 function showLibrary() {
     library.forEach(book=>{
         const card = document.createElement('section');
@@ -61,22 +56,18 @@ function showLibrary() {
 
         const readDiv = document.createElement('div');
         readDiv.textContent=`Read: ${book.isRead ? "yes" : "no"}`
-        card.append(titleDiv, authorDiv, pagesDiv, readDiv);
 
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent= `X`
+        removeBtn.classList.add('removeBtn');
+
+        card.append(titleDiv, authorDiv, pagesDiv, readDiv, removeBtn);
         main.appendChild(card)
 
 
     })
-    // for (const key in library){
-    //     if (library.hasOwnProperty(key)) {
-    //     const div = document.createElement('div');
-    //     div.textContent = library
-    //     booktitle.appendChild(div);
-    //     }
-    // }
 }
-showLibrary()
-//book details in html
+
 
 
 //opens pop up
@@ -87,6 +78,19 @@ const overlay = document.querySelector(".overlay");
 newBookBtn.addEventListener("click", ()=>{
     modal.classList.add("open-modal");
     overlay.classList.add("open-overlay")
+
+})
+
+
+//takes data from the form and adds it to the library 
+const form = document.querySelector('form');
+form.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    const formData = new FormData(form);
+
+     addBookToLibrary(formData.get("bookTitle"),formData.get("bookAuthor"),formData.get("noOfPages"),formData.get("read"),)
+    
+     showLibrary()
 
 })
 
