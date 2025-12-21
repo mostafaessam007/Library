@@ -1,4 +1,9 @@
 const main = document.querySelector('main');
+// const booktitle = document.querySelector(".booktitle");
+// const authorName = document.querySelector(".authorName");
+// const numberOfPages = document.querySelector(".numberOfPages");
+// const isRead = document.querySelector(".isRead");
+
 const library = [
 {
     
@@ -6,6 +11,14 @@ const library = [
     author: 'good author',
     pages: 298,
     isRead: true,
+    id: crypto.randomUUID()
+},
+{
+    
+    title: 'awseome book',
+    author: 'decent author',
+    pages: 220,
+    isRead: false,
     id: crypto.randomUUID()
 }
 ];
@@ -30,14 +43,41 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 
 
+// const values = Object.values(library)
 
 function showLibrary() {
     library.forEach(book=>{
-        const div = document.createElement('div');
-        div.textContent= `Title: ${book.title} Author: ${book.author} Number of Pages: ${book.pages} Have you read the book? ${book.isRead ? "yes" : "no"}`;
-        main.appendChild(div)
+        const card = document.createElement('section');
+        card.classList.add('Library');
+
+        const titleDiv = document.createElement('div');
+        titleDiv.textContent=`Title: ${book.title}`
+
+        const authorDiv = document.createElement('div');
+        authorDiv.textContent=`Author: ${book.author}`
+        
+        const pagesDiv = document.createElement('div');
+        pagesDiv.textContent=`Pages: ${book.pages}`
+
+        const readDiv = document.createElement('div');
+        readDiv.textContent=`Read: ${book.isRead ? "yes" : "no"}`
+        card.append(titleDiv, authorDiv, pagesDiv, readDiv);
+
+        main.appendChild(card)
+
+
     })
+    // for (const key in library){
+    //     if (library.hasOwnProperty(key)) {
+    //     const div = document.createElement('div');
+    //     div.textContent = library
+    //     booktitle.appendChild(div);
+    //     }
+    // }
 }
+showLibrary()
+//book details in html
+
 
 //opens pop up
 const newBookBtn = document.querySelector(".newBookBtn");

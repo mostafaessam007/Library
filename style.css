@@ -16,6 +16,11 @@ header{
     font-weight: 900;
     justify-content: space-between;
 }
+main{
+    padding: 1em;
+    gap: 20px;
+    display: flex;
+}
 .newBookBtn{
     cursor: pointer;
     font-size: 30px;
@@ -28,13 +33,13 @@ header{
 -webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
 -moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
 }
-main, fieldset{
+ fieldset{
     display: flex;
     flex-direction: column;
     padding: 1em;
     gap: 0.5em;
 }
-main, .addBookBtnContainer{
+ .addBookBtnContainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +47,11 @@ main, .addBookBtnContainer{
 
 }
 .modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
     padding: 5px;
+    transform: translate(-50%, -50%);
     border-radius: 5px;
     z-index: 290;
     visibility: hidden;
@@ -50,9 +59,7 @@ main, .addBookBtnContainer{
 .open-modal{
     visibility: visible;
 }
-form{
-    
-}
+
 fieldset{
     width: 500px;
     border-radius: 5px;
@@ -73,7 +80,6 @@ fieldset{
 }
 .open-overlay{
     visibility: visible;
-
 }
 .addBookBtn{
     cursor: pointer;
@@ -88,7 +94,12 @@ fieldset{
 -webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
 -moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
 }
-
+section{
+    padding: 1em;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
 
 footer{
     position: fixed;
