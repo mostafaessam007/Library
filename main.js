@@ -1,26 +1,7 @@
 const main = document.querySelector('main');
-// const booktitle = document.querySelector(".booktitle");
-// const authorName = document.querySelector(".authorName");
-// const numberOfPages = document.querySelector(".numberOfPages");
-// const isRead = document.querySelector(".isRead");
 
 const library = [
-// {
-    
-//     title: 'good book',
-//     author: 'good author',
-//     pages: 298,
-//     isRead: true,
-//     id: crypto.randomUUID()
-// },
-// {
-    
-//     title: 'awseome book',
-//     author: 'decent author',
-//     pages: 220,
-//     isRead: false,
-//     id: crypto.randomUUID()
-// }
+
 ];
 
 function Book(title, author, pages, isRead) {
@@ -35,7 +16,7 @@ function addBookToLibrary(title, author, pages, isRead) {
     this.author= author;
     this.pages= pages;
     this.isRead= isRead;
-    this.id = crypto.randomUUID()
+    id = crypto.randomUUID()
     library.push(book1 = {title, author, pages, isRead, id})
 }
 
@@ -44,6 +25,7 @@ function showLibrary() {
     library.forEach(book=>{
         const card = document.createElement('section');
         card.classList.add('Library');
+        card.dataset.bookId = book.id;
 
         const titleDiv = document.createElement('div');
         titleDiv.textContent=`Title: ${book.title}`
@@ -60,6 +42,12 @@ function showLibrary() {
         const removeBtn = document.createElement('button');
         removeBtn.textContent= `X`
         removeBtn.classList.add('removeBtn');
+
+        removeBtn.addEventListener("click", ()=>{
+        const index = library.findIndex(b => b.id ===book.id);
+        library.splice(index,1);
+        card.remove()
+        })
 
         card.append(titleDiv, authorDiv, pagesDiv, readDiv, removeBtn);
         main.appendChild(card)
@@ -102,3 +90,4 @@ addBookBtn.addEventListener("click", ()=>{
      overlay.classList.remove("open-overlay")
 
 })
+
