@@ -1,27 +1,28 @@
 const main = document.querySelector('main');
-
+const booksContainer = document.querySelector('.booksContainer');
 const library = [
 
 ];
 
 function Book(title, author, pages, isRead) {
-    this.bookName = title;
-    this.authorName= author;
-    this.numberOfPages= pages;
-    this.isBookRead= isRead;
-}
-
-function addBookToLibrary(title, author, pages, isRead) {
     this.title = title;
     this.author= author;
     this.pages= pages;
     this.isRead= isRead;
-    id = crypto.randomUUID()
-    library.push(book1 = {title, author, pages, isRead, id})
+}
+Book.prototype.toggleRead = function () {
+    this.isRead = this.isRead === "yes" ? "no" : "yes";
+}
+
+function addBookToLibrary(title, author, pages, isRead) {
+    const book = new Book(title,author,pages,isRead)
+    book.id = crypto.randomUUID()
+    library.push(book)
 }
 
 //adds book details to the DOM
 function showLibrary() {
+    booksContainer.innerHTML= "";
     library.forEach(book=>{
         const card = document.createElement('section');
         card.classList.add('Library');
@@ -37,21 +38,44 @@ function showLibrary() {
         pagesDiv.textContent=`Pages: ${book.pages}`
 
         const readDiv = document.createElement('div');
-        readDiv.textContent=`Read: ${book.isRead ? "yes" : "no"}`
+        readDiv.textContent=`Read:`;
+        const readBtn = document.createElement('button');
+    // read status button color
+        if (book.isRead == 'yes') {
+            readBtn.textContent="yes";
+            readBtn.classList.add('readBtnYes')
+        }
+        else{
+            readBtn.textContent="no";
+            readBtn.classList.add('readBtnNo')
+
+        };
+       
 
         const removeBtn = document.createElement('button');
         removeBtn.textContent= `X`
         removeBtn.classList.add('removeBtn');
 
         removeBtn.addEventListener("click", ()=>{
-        const index = library.findIndex(b => b.id ===book.id);
+        const index = library.findIndex(b => b.id === book.id);
         library.splice(index,1);
         card.remove()
         })
 
         card.append(titleDiv, authorDiv, pagesDiv, readDiv, removeBtn);
-        main.appendChild(card)
+        readDiv.appendChild(readBtn)
 
+        booksContainer.appendChild(card)
+
+        //  read button status toggle 
+        readBtn.addEventListener("click",()=>{
+           book.toggleRead(); 
+
+           readBtn.textContent = book.isRead;
+             readBtn.classList.toggle("readBtnYes");
+             readBtn.classList.toggle("readBtnNo");
+        })
+        
 
     })
 }
