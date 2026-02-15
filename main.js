@@ -3,13 +3,15 @@ const booksContainer = document.querySelector('.booksContainer');
 const library = [
 
 ];
-
-function Book(title, author, pages, isRead) {
+class Book {
+    constructor(title, author, pages, isRead) {
     this.title = title;
     this.author= author;
     this.pages= pages;
     this.isRead= isRead;
+    }
 }
+
 Book.prototype.toggleRead = function () {
     this.isRead = this.isRead === "yes" ? "no" : "yes";
 }
@@ -99,7 +101,7 @@ const form = document.querySelector('form');
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     const formData = new FormData(form);
-
+    
      addBookToLibrary(formData.get("bookTitle"),formData.get("bookAuthor"),formData.get("noOfPages"),formData.get("read"),)
     
      showLibrary()
