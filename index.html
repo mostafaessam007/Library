@@ -1,64 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="logo">Library</div>
-    
-         <div class="addBtncontainer">
-            <button class="newBookBtn" type="button">New Book</button>
-    </div>
+      <div class="logo">Library</div>
+
+      <div class="addBtncontainer">
+        <button class="newBookBtn" type="button">New Book</button>
+      </div>
     </header>
-<body>
-    
-    <main>
-
+    <body>
+      <main>
         <div class="modal" id="modal">
-            <form>
-                <fieldset>
-                    <legend>Enter the new book's details!</legend>
-                     <label for="bookTitle">Title</label>
-                    <input type="text" name="bookTitle" id="bookTitle" required>
+          <form>
+            <fieldset>
+              <legend>Enter the new book's details!</legend>
+              <label for="bookTitle">Title</label>
+              <input type="text" name="bookTitle" id="bookTitle" required />
 
-                     <label for="bookAuthor">Author</label>
-                    <input type="text" name="bookAuthor" id="bookAuthor" required>
+              <label for="bookAuthor">Author</label>
+              <input type="text" name="bookAuthor" id="bookAuthor" required />
 
-                     <label for="noOfPages">Number of Pages</label>
-                    <input type="number" name="noOfPages" id="noOfPages" required>
+              <label for="noOfPages">Number of Pages</label>
+              <input type="number" name="noOfPages" id="noOfPages" required />
 
-                    <p>Have you read the book?</p>
-                     <label for="readYes"> yes
-                    <input type="radio" name="read" id="readYes" value="yes" required>
-                     </label>
-                      <label for="readNo">no
-                    <input type="radio" name="read" id="readNo" value="no" >
-                     </label>
-                     <div class="addBookBtnContainer">
-                         <button type="submit" class="addBookBtn">Add book</button>
-                     </div>
-                </fieldset>
-            </form>
+              <p>Have you read the book?</p>
+              <label for="readYes">
+                yes
+                <input
+                  type="radio"
+                  name="read"
+                  id="readYes"
+                  value="yes"
+                  required
+                />
+              </label>
+              <label for="readNo"
+                >no
+                <input type="radio" name="read" id="readNo" value="no" />
+              </label>
+              <div class="addBookBtnContainer">
+                <button type="submit" class="addBookBtn">Add book</button>
+              </div>
+            </fieldset>
+          </form>
         </div>
-
-
-    </main> 
-    <div class="booksContainer">
-
-    </div>
-   
-
+      </main>
+      <div class="booksContainer"></div>
     </body>
 
-    <footer>
-        Copyright © 2025 mostafaessam007
-    </footer>       
+    <footer>Copyright © 2025 mostafaessam007</footer>
     <div class="overlay"></div>
-
-</body>
+  </body>
 </html>
