@@ -1,145 +1,149 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-body, fieldset, .modal{
-    background-color: rgb(227, 227, 211);
+body,
+fieldset,
+.modal {
+  background-color: rgb(227, 227, 211);
 }
-header, footer{
-    background-color: rgb(250, 241, 229);
-    padding: 0.6em;
+header,
+footer {
+  background-color: rgb(250, 241, 229);
+  padding: 0.6em;
 }
-header{
-    display: flex;
-    font-size: 2em;
-    font-weight: 900;
-    justify-content: space-between;
-     box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.02);
--webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.02);
--moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.02);
+header {
+  display: flex;
+  font-size: 2em;
+  font-weight: 900;
+  justify-content: space-between;
+  box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.02);
+  -moz-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.02);
+}
+main,
+.booksContainer {
+  padding: 1em;
+  gap: 20px;
+  display: flex;
+}
+.newBookBtn {
+  cursor: pointer;
+  font-size: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid rgb(204, 204, 173) 0.1px;
+  color: rgb(76, 76, 76);
+  background-color: rgb(219, 219, 188);
+  box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 0.5em;
+}
+.addBookBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  z-index: 290;
+  visibility: hidden;
+}
+.open-modal {
+  visibility: visible;
+}
 
+fieldset {
+  width: 500px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
 }
-main, .booksContainer{
-    padding: 1em;
-    gap: 20px;
-    display: flex;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  visibility: hidden;
 }
-.newBookBtn{
-    cursor: pointer;
-    font-size: 30px;
-    padding: 5px;
-    border-radius: 5px;
-    border: solid rgb(204, 204, 173) 0.1px ;
-    color: rgb(76, 76, 76);
-    background-color:rgb(219, 219, 188);
- box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
+.open-overlay {
+  visibility: visible;
 }
- fieldset{
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    gap: 0.5em;
+.addBookBtn {
+  cursor: pointer;
+  font-size: 30px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid rgb(204, 204, 173) 0.1px;
+  color: rgb(76, 76, 76);
+  background-color: rgb(219, 219, 188);
+  box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.08);
 }
- .addBookBtnContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-
+section {
+  padding: 1em;
+  width: 250px;
+  gap: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.04);
 }
-.modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    padding: 5px;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    z-index: 290;
-    visibility: hidden;
+.readBtnYes {
+  background-color: rgb(190, 233, 184);
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
-.open-modal{
-    visibility: visible;
-}
-
-fieldset{
-    width: 500px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
-}
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    pointer-events: none;
-    visibility: hidden;
-}
-.open-overlay{
-    visibility: visible;
-}
-.addBookBtn{
-    cursor: pointer;
-    font-size: 30px;
-    width: 200px;
-    padding: 5px;
-    border-radius: 5px;
-    border: solid rgb(204, 204, 173) 0.1px ;
-    color: rgb(76, 76, 76);
-    background-color:rgb(219, 219, 188);
- box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
--moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.08);
-}
-section{
-    padding: 1em;
-    width: 250px;
-    gap: 10px;
-    border-radius: 5px;
-    border: 1px solid black;
-    box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.04);
--webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.04);
--moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.04);
-
-}
-.readBtnYes{
-    background-color: rgb(190, 233, 184);
-    font-size: 20px;
-    padding: 4px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-.readBtnNo{
-     background-color: rgb(233, 184, 184);
-    font-size: 20px;
-    padding: 4px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
+.readBtnNo {
+  background-color: rgb(233, 184, 184);
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
 .removeBtn {
-    font-size: 20px;
-    padding: 2px;
-    border-radius: 30px;
-    border: none;
-    background-color: rgb(229, 229, 219);
-    cursor: pointer;
-
+  font-size: 20px;
+  padding: 2px;
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(229, 229, 219);
+  cursor: pointer;
 }
 
-footer{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  color: rgb(251, 31, 31);
 }
